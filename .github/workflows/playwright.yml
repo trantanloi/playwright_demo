@@ -20,7 +20,7 @@ jobs:
       run: npx playwright install --with-deps
 
     - name: Navigate to folder
-      run: cd /home/runner/work/playwright_demo/playwright_demo/
+      run: cd /home/runner/work/playwright_demo/playwright_demo/demo_playwright/test-scripts
 #      working-directory:  demo_playwright
     - name: Install js-yaml
       run: npm install js-yaml
