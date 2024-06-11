@@ -1,12 +1,19 @@
 // @ts-check
 const { test, expect } = require('@playwright/test');
 
-test('has title', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+const fs = require('fs');
+const yaml = require('js-yaml');
+const yamlData = yaml.load(fs.readFileSync('../data/config.yaml', 'utf8'))
+// console.log(yamlData.url);
+
+test('Login to the system successfully', async ({ page }) => {
+
+  await page.goto(yamlData.url);
 
   // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
+  await expect(page).toHaveTitle(yamlData.expected_result);
 });
+
 
 test('get started link', async ({ page }) => {
   await page.goto('https://playwright.dev/');
