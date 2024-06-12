@@ -24,11 +24,14 @@ jobs:
 
     - name: Install js-yaml
       run: npm install js-yaml
-      working-directory: demo_playwright
+      # working-directory: demo_playwright
 
     - name: Run Playwright tests
       run: npx playwright test
-      working-directory: demo_playwright/test-scripts
+      # working-directory: demo_playwright/test-scripts
+    
+    - name: check path round 2
+      run: echo $(pwd)
 
     - uses: actions/upload-artifact@v4
       if: always()
