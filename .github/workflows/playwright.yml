@@ -23,7 +23,7 @@ jobs:
       run: echo $(pwd)
 
     - name: Navigate to folder
-      run: cd /home/runner/work/playwright_demo/playwright_demo/demo_playwright
+      run: cd /demo_playwright
 
     - name: check path round 2
       run: echo $(pwd)
