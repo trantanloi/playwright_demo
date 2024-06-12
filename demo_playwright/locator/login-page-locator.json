@@ -1,5 +1,12 @@
 {
-    "id": 1,
-    "name": "John Doe",
-    "age": 12
+    "test_case_a": {
+        "id": 1,
+        "name": "John Doe",
+        "age": 12
+    },
+    "test_case_b": {
+        "id": 1,
+        "name": "John Doe",
+        "age": 22
+    }
 }

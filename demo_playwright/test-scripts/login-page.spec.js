@@ -1,22 +1,22 @@
 // @ts-check
-import data from '../locator/login-page-locator.json';
+import locator from '../locator/login-page-locator.json';
+import data from '../data/login-page-data.json';
 const { test, expect } = require('@playwright/test');
-const fs = require('fs');
-const yaml = require('js-yaml');
+// Get data from yaml file
+// const fs = require('fs');
+// const yaml = require('js-yaml');
+// const yamlData = yaml.load(fs.readFileSync('../data/login-page-data.yaml', 'utf8'));
 
-// Read data file
-const yamlData = yaml.load(fs.readFileSync('../data/login-page-data.yaml', 'utf8'))
-console.log(yamlData.url);
-console.log(data.id);
+// console.log(yamlData.url);
+// console.log(locator.test_case_a.age);
 
 // Read locator file
-
 test('Login to the system successfully', async ({ page }) => {
 
-  await page.goto(yamlData.url);
+  await page.goto(data.test_case_a.url);
 
   // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(yamlData.expected_result);
+  await expect(page).toHaveTitle(data.test_case_a.expected_result);
 });
 
 
