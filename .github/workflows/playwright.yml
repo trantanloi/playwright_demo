@@ -18,17 +18,25 @@ jobs:
 
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
-    - name: check path
+
+    - name: check path round 1
       run: echo $(pwd)
 
     - name: Navigate to folder
-      run: cd /demo_playwright/test-scripts && npm install js-yaml
-#      working-directory:  demo_playwright
-#    - name: Install js-yaml
-#      run: npm install js-yaml
+      run: cd /home/runner/work/playwright_demo/playwright_demo/demo_playwright
 
-    - name: Run Playwright tests
-      run: npx playwright test
+    - name: check path round 2
+      run: echo $(pwd)
+
+    - name: Navigate to folder
+      run: npm install js-yaml
+#      working-directory:  demo_playwright/test-scripts
+##    - name: Install js-yaml
+##      run: npm install js-yaml
+#
+#    - name: Run Playwright tests
+#      run: npx playwright test
+#      working-directory:  demo_playwright/test-scripts
 
     - uses: actions/upload-artifact@v4
       if: always()
