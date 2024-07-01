@@ -20,7 +20,7 @@ test.beforeEach(async ({ page }) => {
   await expect(page).toHaveTitle(data.title);
 });
 
-test.only('Test Case 1: Register User', async ({ page }) => {
+test('Test Case 1: Register User', async ({ page }) => {
   // Click on 'Signup / Login' button with element as class
   // await page.click(locator['register-user']['login-button-locator-with-class']);
 
