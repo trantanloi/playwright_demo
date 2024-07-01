@@ -1,0 +1,50 @@
+{
+    "signup-page": {
+        "signup-login-label-locator": "//i[contains(@class,'fa-lock')]//ancestor::a",
+        "login-button-locator-with-class": ".fa-lock",
+        "login-button-locator-with-text": "text=' Signup / Login'",
+        "login-button-locator-with-xpath": "//i[contains(@class,'fa-lock')]",
+        "login-label-locator": "//div[@class='login-form']/h2",
+        "signup-label-locator": "//div[@class='signup-form']/h2",
+        "signup-name-locator": "[name='name']",
+        "signup-email-locator": "//input[@data-qa='signup-email']",
+        "signup-button-locator": "//button[@data-qa='signup-button']"
+    },
+    "create-account-page":{
+        "title-signup-locator": "//b[text()='Enter Account Information']",
+        "mr-radio-locator": "#id_gender1",
+        "mrs-radio-locator": "#id_gender2",
+        "name-field-locator": "[name='name']",
+        "email-field-locator": "#email",
+        "password-field-locator": "#password",
+        "day-field-locator": "#days",
+        "month-field-locator": "#months",
+        "years-field-locator": "#years",
+        "newsletter-checkbox-locator": "#newsletter",
+        "receive-checkbox-locator": "#optin",
+        "create-account-btn-locator": "//button[@data-qa='create-account']",
+        "first-name-field-locator": "#first_name",
+        "last-name-field-locator": "#last_name",
+        "company-field-locator": "#company",
+        "address-field-locator": "#address1",
+        "address2-field-locator": "#address2",
+        "country-combobox-locator": "#country",
+        "state-field-locator": "#state",
+        "city-field-locator": "#city",
+        "zipcode-field-locator": "#zipcode",
+        "mobile-number-field-locator": "#mobile_number"
+
+    },
+    "account-created": {
+        "created-label-locator": "//b[text()='Account Created!']",
+        "continue-btn-locator": "//a[@data-qa='continue-button']"
+    },
+    "login-successfully":{
+        "logged-label-locator": "//i[contains(@class,'fa-user')]//ancestor::a",
+        "delete-account-locator": "//a[@href='/delete_account']"
+    },
+    "account-deleted":{
+        "deleted-label-locator": "//b[text()='Account Deleted!']",
+        "continue-btn-locator": "//a[@data-qa='continue-button']"
+    }
+}

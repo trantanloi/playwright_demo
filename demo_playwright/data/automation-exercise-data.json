@@ -1,0 +1,30 @@
+
+{
+    "url": "https://automationexercise.com/",
+    "title": "Automation Exercise",
+    "register-user": {
+        "signup-login-label": " Signup / Login",
+        "login-label": "Login to your account",
+        "signup-label": "New User Signup!",
+        "username": "Automation Exercise",
+        "title-signup": "Enter Account Information",
+        "password": "test123"
+    },
+    "address-info": {
+        "first-name": "First Name Test",
+        "last-name": "Last Name Test",
+        "company": "Company Test",
+        "address": "Street Address, P.O.Box, Company Name",
+        "address-bonus": "Street Address, P.O.Box, Company Name Test",
+        "state": "State Test",
+        "city": "City Test",
+        "zipcode": "1000000",
+        "mobile-numher": "0987654321"
+    },
+    "account-created":{
+        "created-label": "Account Created!"
+    },
+    "account-deleted":{
+        "deleted-label": "Account Deleted!"
+    }
+}
