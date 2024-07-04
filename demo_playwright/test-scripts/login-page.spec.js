@@ -1,14 +1,8 @@
 // @ts-check
 import locator from '../locator/automation-exercise-locator.json';
 import data from '../data/automation-exercise-data.json';
+import * as commonFunc from '../function/common-function.js';
 const { test, expect } = require('@playwright/test');
-
-
-function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
 
 
 // https://automationexercise.com/test_cases
@@ -21,11 +15,6 @@ test.beforeEach(async ({ page }) => {
 });
 
 test('Test Case 1: Register User', async ({ page }) => {
-  // Click on 'Signup / Login' button with element as class
-  // await page.click(locator['register-user']['login-button-locator-with-class']);
-
-  // Click on "Signup / Login" button with element as text
-  // await page.click(locator['register-user']['login-button-locator-with-text']);
 
   // Steps 4: Click on "Signup / Login" button with element as xpath
   await page.click(locator['signup-page']['login-button-locator-with-xpath']);
@@ -45,7 +34,7 @@ test('Test Case 1: Register User', async ({ page }) => {
   // await page.fill(locator['register-user']['signup-email-locator'], "test@yopmail.com")
 
   // Generator a new email
-  const randomNumber = Math.floor(Math.random() * 1000);
+  const randomNumber = commonFunc.getRandomValue(10000);
   const geneEmail = "testautomation"+randomNumber+"@yopmail.com"
   await page.locator(locator['signup-page']['signup-email-locator']).fill(geneEmail);
 
@@ -55,11 +44,11 @@ test('Test Case 1: Register User', async ({ page }) => {
   // Step 8: Verify that 'ENTER ACCOUNT INFORMATION' is visible
   const titleSignup = await page.locator(locator['create-account-page']['title-signup-locator']);
 
-  await expect(titleSignup).toContainText(data['register-user']['title-signup']);
+  await commonFunc.verifyDataContainText(titleSignup, data['register-user']['title-signup']);
 
   // Step 9: Fill details: Title, Name, Email, Password, Date of birth
   // select Title
-  const randomTest = Math.floor(Math.random() * 2);
+  const randomTest = commonFunc.getRandomValue(2);
   if(randomTest==0)
     {
       await page.click(locator['create-account-page']['mr-radio-locator']);
@@ -81,13 +70,14 @@ test('Test Case 1: Register User', async ({ page }) => {
   await page.locator(locator['create-account-page']['password-field-locator']).fill(data['register-user'].password);
 
   // select date of birth
-  const randomDate = String(Math.floor(Math.random() * 31));
+  const randomDate = String(commonFunc.getRandomValue(31));
   await page.selectOption(locator['create-account-page']['day-field-locator'],randomDate);
 
-  const randomMonth = String(Math.floor(Math.random() * 12));
+  const randomMonth = String(commonFunc.getRandomValue(12));
   await page.selectOption(locator['create-account-page']['month-field-locator'], randomMonth);
 
-  let randomYear = String(getRandomInt(1990, 2021));
+  let randomYear = String(commonFunc.getRandomYear(1990, 2021));
+
   await page.selectOption(locator['create-account-page']['years-field-locator'] , randomYear);
 
   // Step 10: Select checkbox 'Sign up for our newsletter!'
@@ -146,5 +136,6 @@ test('Test Case 1: Register User', async ({ page }) => {
 
   const getSignupLabel = await page.locator(locator['signup-page']['signup-login-label-locator']);
   await expect(getSignupLabel).toHaveText(data['register-user']['signup-login-label']);
+
 });
 
